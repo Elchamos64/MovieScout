@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Scout</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="./styles/phone.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png"" href="./favicon_io/android-chrome-512x512.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <header>
+        <img src="./images/Blue and White Circle Surfing Club Logo.png" alt="logo image">
+        <h3 class="title">Movie Scout</h3>
+        <div class="search-containers">
+            <nav>
+                <a href="#">My Library</a>
+            </nav>
+            <form id="searchMovie">
+                <input type="text" id="title" name="title" placeholder="Search..."required>
+                <button type="submit" class="transparent-button"><i class='bx bx-search-alt'></i></button>
+            </form>
+        </div>
+    </header>
+    <main>
+    
+        <div id="results"></div>
+    
+    </main>
+    <footer>
+        
+    </footer>
+    <script src="./scripts/movies.js" type="module"></script>
+</body>
+</html>

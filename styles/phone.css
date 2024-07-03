@@ -1,0 +1,29 @@
+*{
+    background-color: #343a40;
+}
+.transparent-button {
+    background-color: transparent;
+    border: none;
+    color: inherit; /* This ensures the text color is inherited */
+    cursor: pointer;
+    font-size: inherit; /* This ensures the font size is inherited */
+}
+.transparent-button:hover {
+    text-decoration: underline; /* Optional: add an underline on hover */
+}
+
+header, img{
+    width: 50px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+nav a{
+    color: #ffb703;
+    text-decoration: none;
+}
