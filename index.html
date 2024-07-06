@@ -9,25 +9,33 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png"" href="./favicon_io/android-chrome-512x512.png">
-    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
     <header>
-        <img src="./images/Blue and White Circle Surfing Club Logo.png" alt="logo image">
-        <h3 class="title">Movie Scout</h3>
-        <div class="search-containers">
-            <nav>
-                <a href="#">My Library</a>
-            </nav>
-            <form id="searchMovie">
-                <input type="text" id="title" name="title" placeholder="Search..."required>
-                <button type="submit" class="transparent-button"><i class='bx bx-search-alt'></i></button>
-            </form>
+        <div class="left-content">
+            <img src="./images/Blue and White Circle Surfing Club Logo.png" alt="logo image" id="favicon">
+            <h3 class="title">Movie Scout</h3>
         </div>
+        <nav>
+            <a href="#">My Library</a>
+        </nav>
     </header>
     <main>
+        <section class="hero-container">
+            <img src="./images/hero-image.jpg" alt="hero image" class="hero-image">
+        </section>
+        <div class="dashboard">
+            <div class="search-container">
+                <form id="searchMovie">
+                    <input type="text" id="title" name="title" placeholder="Search..."required>
+                    <button type="submit" class="transparent-button"><i class='bx bx-search-alt'></i></button>
+                </form>
+            </div>
+            <div id="results">
     
-        <div id="results"></div>
+            </div>
+
+        </div>
     
     </main>
     <footer>

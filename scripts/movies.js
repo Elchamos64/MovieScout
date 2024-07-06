@@ -24,7 +24,7 @@ function displayResults(movies) {
         const resultDiv = document.createElement('div');
         resultDiv.className = 'result';
 
-        const name = document.createElement('h2');
+        const name = document.createElement('h4');
         name.textContent = movie.title;
         resultDiv.appendChild(name);
 
@@ -40,6 +40,7 @@ function displayResults(movies) {
             const img = document.createElement('img');
             img.src = movie.poster_path;
             img.alt = movie.title;
+            img.className = "movie-image"
             resultDiv.appendChild(img);
         }
 
