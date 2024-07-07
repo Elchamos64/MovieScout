@@ -31,10 +31,16 @@ body{
     align-items: center; /* Center vertically */
 }
 #favicon{
-    width: 50px;
+    width: 45px;
     margin-right: 15px;
 }
 
+/* hide description and release date */
+
+.movie-overview, .release-date{
+    display: none;
+
+}
 .dashboard{
     background-color: #212529;
     color: #ffb703;
@@ -63,11 +69,9 @@ body{
 
 .result {
     display: flex;
-    align-items: flex-start; /* Align items at the top */
+    align-items: center; /* Align items at the top */
     padding: 10px;
-    border: 1px;
-    border-radius: 4px;
-    gap: 15px; /* Space between image and text */
+    gap: 70px; /* Space between image and text */
 }
 
 .movie-image {
@@ -115,6 +119,12 @@ header {
     align-items: center;
     padding: 10px;
     color: #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
 .left-content {
@@ -134,4 +144,26 @@ footer {
     text-align: center;
     color: #fff;
     padding: 10px;
+}
+
+
+/* General styles */
+ .info-button{
+    text-align: center;
+ }
+
+
+/* watch later section */
+.watch-later{
+    width: 97%;
+    height: 200px;
+    background-color: #212529;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.watch-later p{
+    padding: 10px;
+    color: #ffb703;
 }
