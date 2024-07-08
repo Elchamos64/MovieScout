@@ -1,5 +1,5 @@
 import { getMovieTitle } from './externalServices.mjs';
-import { setLocalStorage } from './utils.mjs';
+import { setLocalStorage, getLocalStorage } from './utils.mjs';
 
 document.getElementById('searchMovie').addEventListener('submit', async function(e) {
     e.preventDefault();

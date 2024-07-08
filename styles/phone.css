@@ -3,6 +3,7 @@
 *{
     font-family: 'Roboto', Rubik;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -44,13 +45,12 @@ body{
 .dashboard{
     background-color: #212529;
     color: #ffb703;
-    width: 92%;
+    width: 97%;
     height: 200px;
     margin: 0 auto;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     overflow-y: auto; /* Enable vertical scrolling */
-    padding: 10px;
 }
 
 .search-container {
@@ -71,7 +71,15 @@ body{
     display: flex;
     align-items: center; /* Align items at the top */
     padding: 10px;
-    gap: 70px; /* Space between image and text */
+    margin: 10px;
+}
+
+.result:hover{
+    background-color: #343a40;
+}
+
+.result .movie-image {
+    padding-left: 40px;
 }
 
 .movie-image {
@@ -156,14 +164,102 @@ footer {
 /* watch later section */
 .watch-later{
     width: 97%;
-    height: 200px;
+    height: 320px;
+    overflow: auto;
     background-color: #212529;
     margin: 0 auto;
     margin-top: 20px;
     border-radius: 10px;
 }
 
+.watch-item {
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    margin: 2px;
+}
+
+.watch-item:hover{
+    background-color: #343a40;
+}
 .watch-later p{
+    padding-top: 10px;
+    padding-left: 10px;
+    color: #ffb703;
+}
+
+.watch-display{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: 10px; /* Space between each result */
+}
+
+.content-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.watch-later-button{
+    background-color: #ffb703;
+    color: #212529;
+    border-radius: 5px;
+    border: none;
+    margin: 10px;
     padding: 10px;
+    transition: 1s;
+}
+
+.watch-later-button:hover{
+    background-color: #212529;
+    color: #ffb703;
+}
+
+
+/* WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    height: 12px; /* Height of the scrollbar (for horizontal scrollbars) */
+}
+
+::-webkit-scrollbar-track {
+    background: #212529; /* Background of the scrollbar track */
+    border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffb703; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #212529; /* Adds space around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff9a03; /* Color of the scrollbar thumb on hover */
+}
+
+/* Back to Top Button Styles */
+#backToTopBtn {
+    display: none; 
+    position: fixed; 
+    bottom: 30px; 
+    right: 10px; 
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color: #ffb703; 
+    color: white; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    font-size: 24px;
+    transition: 1s;
+}
+
+#backToTopBtn:hover {
+    background-color: black; /* Add a dark-grey background on hover */
     color: #ffb703;
 }
