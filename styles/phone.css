@@ -11,7 +11,7 @@ body{
 }
 .transparent-button {
     background-color: #212529;
-    color: #ffb703;
+    color: #7b2cbf;
     border: none;
     border-top-right-radius: 10px;
     font-size: 25px;
@@ -20,9 +20,11 @@ body{
     padding: 7.2px;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+    transition: 0.5s;
 }
 .transparent-button:hover {
-    text-decoration: underline; /* Optional: add an underline on hover */
+    background-color: #343a40;
+    color: #7b2cbf;
 }
 
 #searchMovie{
@@ -33,7 +35,7 @@ body{
 }
 #favicon{
     width: 45px;
-    margin-right: 15px;
+    margin-right: 5px;
 }
 
 /* hide description and release date */
@@ -44,7 +46,7 @@ body{
 }
 .dashboard{
     background-color: #212529;
-    color: #ffb703;
+    color: #fff;
     width: 97%;
     height: 200px;
     margin: 0 auto;
@@ -78,12 +80,8 @@ body{
     background-color: #343a40;
 }
 
-.result .movie-image {
-    padding-left: 40px;
-}
-
 .movie-image {
-    width: 100px; /* Adjust the width as needed */
+    width: 150px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
     border-radius: 4px;
 }
@@ -93,10 +91,6 @@ body{
     flex-direction: column;
 }
 
-h2 {
-    margin: 0 0 10px 0;
-}
-
 p {
     margin: 5px 0;
 }
@@ -104,21 +98,25 @@ p {
 
 #title{
     background-color: #212529;
-    border: 2px; /* Green border */
-    border-top-left-radius: 10px;        /* Rounded corners */
-    padding: 10px;             /* Padding inside the input */
-    font-size: 16px;           /* Font size */
-    color: #fff;               /* Text color */
-    outline: none;             /* Remove default outline */
+    border: 0; 
+    border-top-left-radius: 10px;      
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 10px;             
+    font-size: 16px;           
+    color: #fff;              
+    outline: none;             
     width: 100%;
 
 }
 
 
 nav a{
-    color: #ffb703;
+    color: #7b2cbf ;
     text-decoration: none;
     margin-right: 15px;
+    font-size:xx-large;
 }
 
 header {
@@ -130,7 +128,7 @@ header {
     position: absolute;
     top: 0;
     width: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 2), rgba(0, 0, 0, 0));
     box-sizing: border-box;
     z-index: 1000;
 }
@@ -164,7 +162,7 @@ footer {
 /* watch later section */
 .watch-later{
     width: 97%;
-    height: 320px;
+    height: auto;
     overflow: auto;
     background-color: #212529;
     margin: 0 auto;
@@ -175,24 +173,32 @@ footer {
 .watch-item {
     padding-left: 10px;
     padding-top: 10px;
-    padding-right: 10px;
     margin: 2px;
+}
+
+.watch-item img {
+width: 120px;
 }
 
 .watch-item:hover{
     background-color: #343a40;
 }
 .watch-later p{
+    color: #fff;
+    font-size: x-small;
+    text-align: left;
+}
+
+.watch-later h4{
     padding-top: 10px;
     padding-left: 10px;
-    color: #ffb703;
+    color: #fff;
 }
 
 .watch-display{
     display: flex;
     flex-direction: row;
     text-align: center;
-    gap: 10px; /* Space between each result */
 }
 
 .content-wrapper{
@@ -206,7 +212,7 @@ footer {
 }
 
 .watch-later-button{
-    background-color: #ffb703;
+    background-color: #7b2cbf;
     color: #212529;
     border-radius: 5px;
     border: none;
@@ -217,7 +223,7 @@ footer {
 
 .watch-later-button:hover{
     background-color: #212529;
-    color: #ffb703;
+    color: #7b2cbf;
 }
 
 
@@ -233,7 +239,7 @@ footer {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #ffb703; /* Color of the scrollbar thumb */
+    background: #7b2cbf; /* Color of the scrollbar thumb */
     border-radius: 10px; /* Rounded corners */
     border: 2px solid #212529; /* Adds space around the thumb */
 }
@@ -251,7 +257,7 @@ footer {
     z-index: 99; 
     border: none; 
     outline: none; 
-    background-color: #ffb703; 
+    background-color: #7b2cbf; 
     color: white; 
     cursor: pointer; 
     border-radius: 5px; 
@@ -261,5 +267,5 @@ footer {
 
 #backToTopBtn:hover {
     background-color: black; /* Add a dark-grey background on hover */
-    color: #ffb703;
+    color: #7b2cbf;
 }

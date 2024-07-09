@@ -7,7 +7,7 @@ window.onscroll = function() {
 };
 
 function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
         backToTopBtn.style.display = "block";
     } else {
         backToTopBtn.style.display = "none";
