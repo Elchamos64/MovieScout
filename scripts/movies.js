@@ -99,12 +99,14 @@ function displayTopRatedMovies(movies) {
             topRatedMovieDiv.appendChild(img);
         }
     
-        const name = document.createElement('h4');
+        const name = document.createElement('p');
         name.textContent = movie.title;
+        name.className = 'top-rated-title';
         topRatedMovieDiv.appendChild(name);
     
         const rating = document.createElement('p');
-        rating.textContent = `Rating: ${movie.vote_average}`;
+        rating.textContent = `${movie.vote_average.toFixed(1)}`;
+        rating.className = 'top-rated-rating';
         topRatedMovieDiv.appendChild(rating);
     
         topRatedMoviesDiv.appendChild(topRatedMovieDiv);

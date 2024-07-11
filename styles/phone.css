@@ -284,6 +284,23 @@ footer {
   color: #fff;
 }
 
+.top-rated-title {
+  color: #fff;
+  font-size: x-small;
+  text-align: left;
+  text-overflow: ellipsis; /* Show ellipsis when text overflows */
+  white-space: nowrap; /* Prevent text from wrapping to a new line */
+  overflow: hidden;    /* Hide the overflow text */
+  width: 100px;
+}
+
+.top-rated-rating{
+  color: greenyellow;
+  font-weight: bolder;
+  font-size: x-small;
+  text-align: left;
+}
+
 .top-rated-display {
   width: 97%;
   height: auto;
@@ -294,15 +311,17 @@ footer {
   display: flex;
   flex-direction: row;
   text-align: center;
-  align-items: center;
 }
 .top-rated-movie {
   padding-left: 10px;
   padding-top: 10px;
   margin: 2px;
+  transition: 0.5s;
 }
 
 .top-rated-movie img {
   height: auto;
+  border-radius: 5px;
   width: 120px;
+  transition: 0.5s;
 }
