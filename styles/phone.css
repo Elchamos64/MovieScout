@@ -1,166 +1,273 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto&family=Rubik:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto&family=Rubik:wght@300&display=swap");
 
-*{
-    font-family: 'Roboto', Rubik;
-    margin: 0;
-    scroll-behavior: smooth;
+* {
+  font-family: "Roboto", Rubik;
+  margin: 0;
+  scroll-behavior: smooth;
 }
 
-body{
-    background-color: #343a40;
+body {
+  background-color: #343a40;
 }
 .transparent-button {
-    background-color: #212529;
-    color: #7b2cbf;
-    border: none;
-    border-top-right-radius: 10px;
-    font-size: 25px;
-    cursor: pointer;
-    display: flex;
-    padding: 7.2px;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    transition: 0.5s;
+  background-color: #212529;
+  color: #7b2cbf;
+  border: none;
+  border-top-right-radius: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  display: flex;
+  padding: 7.2px;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  transition: 0.5s;
 }
 .transparent-button:hover {
-    background-color: #343a40;
-    color: #7b2cbf;
+  background-color: #343a40;
+  color: #7b2cbf;
 }
 
-#searchMovie{
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    position: relative;
-    align-items: center; /* Center vertically */
+#searchMovie {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  position: relative;
+  align-items: center; /* Center vertically */
 }
-#favicon{
-    width: 45px;
-    margin-right: 5px;
+#favicon {
+  width: 45px;
+  margin-right: 5px;
 }
 
 /* hide description and release date */
 
-.movie-overview, .release-date{
-    display: none;
-
+.movie-overview,
+.release-date {
+  display: none;
 }
-.dashboard{
-    background-color: #212529;
-    color: #fff;
-    width: 97%;
-    height: 200px;
-    margin: 0 auto;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    overflow-y: auto; /* Enable vertical scrolling */
+.dashboard {
+  background-color: #212529;
+  color: #fff;
+  width: 97%;
+  height: 200px;
+  margin: 0 auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .search-container {
-    background-color: #343a40;
-    width: 97%;
-    margin: 0 auto;
-    margin-top: 15px;
+  background-color: #343a40;
+  width: 97%;
+  margin: 0 auto;
+  margin-top: 15px;
 }
 
 .results {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Space between each result */
-    height: 500px; /* Adjust the height as needed */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between each result */
+  height: 500px; /* Adjust the height as needed */
 }
 
 .result {
-    display: flex;
-    align-items: center; /* Align items at the top */
-    padding: 10px;
-    margin: 10px;
+  display: flex;
+  align-items: center; /* Align items at the top */
+  padding: 10px;
+  margin: 10px;
 }
 
-.result:hover{
-    background-color: #343a40;
+.result:hover {
+  background-color: #343a40;
 }
 
 .movie-image {
-    width: 150px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 4px;
+  width: 150px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 4px;
 }
 
 .result-content {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 p {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
-
-#title{
-    background-color: #212529;
-    border: 0; 
-    border-top-left-radius: 10px;      
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    padding: 10px;             
-    font-size: 16px;           
-    color: #fff;              
-    outline: none;             
-    width: 100%;
-
+#title {
+  background-color: #212529;
+  border: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  outline: none;
+  width: 100%;
 }
 
-
-nav a{
-    color: #7b2cbf ;
-    text-decoration: none;
-    margin-right: 15px;
-    font-size:xx-large;
+nav a {
+  color: #7b2cbf;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: xx-large;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    color: #fff;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 2), rgba(0, 0, 0, 0));
-    box-sizing: border-box;
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 2), rgba(0, 0, 0, 0));
+  box-sizing: border-box;
+  z-index: 1000;
 }
 
 .left-content {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-.hero-container{
-    width: 100%;
+.hero-container {
+  width: 100%;
 }
 
-.hero-image{
-    width: 100%;
+.hero-image {
+  width: 100%;
 }
 
 footer {
-    text-align: center;
-    color: #fff;
-    padding: 10px;
+  text-align: center;
+  color: #fff;
+  padding: 10px;
 }
 
-
 /* General styles */
- .info-button{
-    text-align: center;
- }
-
+.info-button {
+  text-align: center;
+}
 
 /* watch later section */
-.watch-later{
+.watch-later {
+  width: 97%;
+  height: auto;
+  overflow: auto;
+  background-color: #212529;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.watch-item {
+  padding-left: 10px;
+  padding-top: 10px;
+  margin: 2px;
+}
+
+.watch-item img {
+  width: 120px;
+}
+
+.watch-item:hover {
+  background-color: #343a40;
+}
+.watch-later p {
+  color: #fff;
+  font-size: x-small;
+  text-align: left;
+}
+
+.watch-later h4 {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  color: #fff;
+}
+
+.watch-display {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.watch-later-button {
+  background-color: #7b2cbf;
+  color: #212529;
+  border-radius: 5px;
+  border: none;
+  margin: 10px;
+  padding: 10px;
+  transition: 1s;
+}
+
+.watch-later-button:hover {
+  background-color: #212529;
+  color: #7b2cbf;
+}
+
+/* WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar (for horizontal scrollbars) */
+}
+
+::-webkit-scrollbar-track {
+  background: #212529; /* Background of the scrollbar track */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7b2cbf; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners */
+  border: 2px solid #212529; /* Adds space around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff9a03; /* Color of the scrollbar thumb on hover */
+}
+
+/* Back to Top Button Styles */
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 10px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #7b2cbf;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 24px;
+  transition: 1s;
+}
+
+#backToTopBtn:hover {
+  background-color: black; /* Add a dark-grey background on hover */
+  color: #7b2cbf;
+}
+
+/* Top rated movies */
+
+.top-rated-movies {
     width: 97%;
     height: auto;
     overflow: auto;
@@ -170,102 +277,32 @@ footer {
     border-radius: 10px;
 }
 
-.watch-item {
-    padding-left: 10px;
-    padding-top: 10px;
-    margin: 2px;
+.top-rated-movies h4 {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  color: #fff;
 }
 
-.watch-item img {
-width: 120px;
+.top-rated-display {
+  width: 97%;
+  height: auto;
+  overflow: auto;
+  background-color: #212529;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+}
+.top-rated-movie {
+  padding-left: 10px;
+  padding-top: 10px;
+  margin: 2px;
 }
 
-.watch-item:hover{
-    background-color: #343a40;
-}
-.watch-later p{
-    color: #fff;
-    font-size: x-small;
-    text-align: left;
-}
-
-.watch-later h4{
-    padding-top: 10px;
-    padding-left: 10px;
-    color: #fff;
-}
-
-.watch-display{
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-}
-
-.content-wrapper{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.watch-later-button{
-    background-color: #7b2cbf;
-    color: #212529;
-    border-radius: 5px;
-    border: none;
-    margin: 10px;
-    padding: 10px;
-    transition: 1s;
-}
-
-.watch-later-button:hover{
-    background-color: #212529;
-    color: #7b2cbf;
-}
-
-
-/* WebKit browsers (Chrome, Safari, Edge) */
-::-webkit-scrollbar {
-    width: 12px; /* Width of the scrollbar */
-    height: 12px; /* Height of the scrollbar (for horizontal scrollbars) */
-}
-
-::-webkit-scrollbar-track {
-    background: #212529; /* Background of the scrollbar track */
-    border-radius: 10px; /* Rounded corners */
-}
-
-::-webkit-scrollbar-thumb {
-    background: #7b2cbf; /* Color of the scrollbar thumb */
-    border-radius: 10px; /* Rounded corners */
-    border: 2px solid #212529; /* Adds space around the thumb */
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #ff9a03; /* Color of the scrollbar thumb on hover */
-}
-
-/* Back to Top Button Styles */
-#backToTopBtn {
-    display: none; 
-    position: fixed; 
-    bottom: 30px; 
-    right: 10px; 
-    z-index: 99; 
-    border: none; 
-    outline: none; 
-    background-color: #7b2cbf; 
-    color: white; 
-    cursor: pointer; 
-    border-radius: 5px; 
-    font-size: 24px;
-    transition: 1s;
-}
-
-#backToTopBtn:hover {
-    background-color: black; /* Add a dark-grey background on hover */
-    color: #7b2cbf;
+.top-rated-movie img {
+  height: auto;
+  width: 120px;
 }

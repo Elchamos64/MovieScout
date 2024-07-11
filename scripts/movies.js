@@ -1,4 +1,4 @@
-import { getMovieTitle } from './externalServices.mjs';
+import { getMovieTitle, getTopRatedMovies } from './externalServices.mjs';
 import { setLocalStorage, getLocalStorage } from './utils.mjs';
 
 document.getElementById('searchMovie').addEventListener('submit', async function(e) {
@@ -12,6 +12,14 @@ document.getElementById('searchMovie').addEventListener('submit', async function
     }
 });
 
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const topRatedMovies = await getTopRatedMovies();
+        displayTopRatedMovies(topRatedMovies);
+    } catch (error) {
+        console.error('Error fetching top-rated movies:', error);
+    }
+});
 
 function displayResults(movies) {
     const resultsDiv = document.getElementById('results');
@@ -65,6 +73,43 @@ function displayResults(movies) {
     });
 }
 
+function displayTopRatedMovies(movies) {
+    const topRatedMoviesDiv = document.querySelector('.top-rated-display');
+    topRatedMoviesDiv.innerHTML = ''; // Clear any existing content
+    
+    if (movies.length === 0) {
+        topRatedMoviesDiv.innerHTML = '<p>No top-rated movies found.</p>';
+        return;
+    }
+    
+    // Sort movies by vote_average in descending order
+    movies.sort((a, b) => b.vote_average - a.vote_average);
+    
+    // Display up to the top 20 highest-rated movies
+    const moviesToDisplay = movies.slice(0, 20);
+    
+    moviesToDisplay.forEach(movie => {
+        const topRatedMovieDiv = document.createElement('div');
+        topRatedMovieDiv.className = 'top-rated-movie';
+    
+        if (movie.poster_path) {
+            const img = document.createElement('img');
+            img.src = movie.poster_path;
+            img.alt = movie.title;
+            topRatedMovieDiv.appendChild(img);
+        }
+    
+        const name = document.createElement('h4');
+        name.textContent = movie.title;
+        topRatedMovieDiv.appendChild(name);
+    
+        const rating = document.createElement('p');
+        rating.textContent = `Rating: ${movie.vote_average}`;
+        topRatedMovieDiv.appendChild(rating);
+    
+        topRatedMoviesDiv.appendChild(topRatedMovieDiv);
+    });
+}
 function addToWatchLater(movie) {
     const watchDisplay = document.querySelector('.watch-display');
 
@@ -85,7 +130,6 @@ function addToWatchLater(movie) {
 
     watchDisplay.appendChild(watchItem);
 }
-
 
 function saveToWatchLaterJSON(movie) {
     let watchLaterMovies = getLocalStorage('watchLaterMovies') || [];
