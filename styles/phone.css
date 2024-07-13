@@ -48,11 +48,11 @@ body {
   background-color: #212529;
   color: #fff;
   width: 97%;
-  height: 200px;
+  height: auto;
   margin: 0 auto;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  overflow-y: auto; /* Enable vertical scrolling */
+  overflow: auto; /* Enable vertical scrolling */
 }
 
 .search-container {
@@ -62,28 +62,41 @@ body {
   margin-top: 15px;
 }
 
-.results {
+#results {
   display: flex;
-  flex-direction: column;
-  gap: 10px; /* Space between each result */
-  height: 500px; /* Adjust the height as needed */
+  flex-direction: row;
+  overflow: auto;
+  height: auto; /* Adjust the height as needed */
 }
 
 .result {
-  display: flex;
-  align-items: center; /* Align items at the top */
   padding: 10px;
-  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.result:hover {
-  background-color: #343a40;
+
+
+.result:hover .watch-later-button{
+  display: block;
 }
+
+.result h4 {
+ display: none;
+}
+
+
 
 .movie-image {
   width: 150px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   border-radius: 4px;
+  transition: opacity 0.5s;
+}
+
+.movie-image:hover{
+  opacity: 0.5;
 }
 
 .result-content {
@@ -166,14 +179,13 @@ footer {
 }
 
 .watch-item {
-  padding-left: 10px;
-  padding-top: 10px;
-  margin: 2px;
+  padding: 5px;
 }
 
 .watch-item img {
   width: 120px;
 }
+
 
 .watch-item:hover {
   background-color: #343a40;
@@ -182,6 +194,10 @@ footer {
   color: #fff;
   font-size: x-small;
   text-align: left;
+  text-overflow: ellipsis; /* Show ellipsis when text overflows */
+  white-space: nowrap; /* Prevent text from wrapping to a new line */
+  overflow: hidden;    /* Hide the overflow text */
+  width: 100px;
 }
 
 .watch-later h4 {
@@ -195,26 +211,26 @@ footer {
   display: flex;
   flex-direction: row;
   text-align: center;
+  margin: 0 auto;
+  width: 97%;
 }
 
-.content-wrapper {
+/* .content-wrapper {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
+  
+} */
 
 .watch-later-button {
   background-color: #7b2cbf;
   color: #212529;
   border-radius: 5px;
   border: none;
+  display: none;
   margin: 10px;
   padding: 10px;
-  transition: 1s;
+  z-index: 1000;
+  position: absolute;
 }
 
 .watch-later-button:hover {
@@ -297,7 +313,7 @@ footer {
 .top-rated-rating{
   color: greenyellow;
   font-weight: bolder;
-  font-size: x-small;
+  font-size: small;
   text-align: left;
 }
 
@@ -313,9 +329,7 @@ footer {
   text-align: center;
 }
 .top-rated-movie {
-  padding-left: 10px;
-  padding-top: 10px;
-  margin: 2px;
+  padding: 5px;
   transition: 0.5s;
 }
 
@@ -323,5 +337,75 @@ footer {
   height: auto;
   border-radius: 5px;
   width: 120px;
-  transition: 0.5s;
+  transition: opacity 0.5s, border-clor 0.5s;
+}
+
+.top-rated-movie img:hover {
+  opacity: 0.5; /* Adjust the opacity level as needed */
+  border-color: #fff;
+}
+
+/* recent realeases */
+
+
+.recent-releases{
+  width: 97%;
+  height: auto;
+  overflow: auto;
+  background-color: #212529;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.recent-releases h4 {
+padding-top: 10px;
+padding-left: 10px;
+padding-bottom: 10px;
+color: #fff;
+}
+
+.recent-release-title {
+color: #fff;
+font-size: x-small;
+text-align: left;
+text-overflow: ellipsis; /* Show ellipsis when text overflows */
+white-space: nowrap; /* Prevent text from wrapping to a new line */
+overflow: hidden;    /* Hide the overflow text */
+width: 100px;
+}
+
+.top-rated-rating{
+color: greenyellow;
+font-weight: bolder;
+font-size: small;
+text-align: left;
+}
+
+.recent-display {
+width: 97%;
+height: auto;
+overflow: auto;
+background-color: #212529;
+margin: 0 auto;
+border-radius: 10px;
+display: flex;
+flex-direction: row;
+text-align: center;
+}
+.top-rated-movie {
+padding: 5px;
+transition: 0.5s;
+}
+
+.recent-release-movie img {
+height: auto;
+border-radius: 5px;
+width: 120px;
+transition: opacity 0.5s, border-clor 0.5s;
+}
+
+.top-rated-movie img:hover {
+opacity: 0.5; /* Adjust the opacity level as needed */
+border-color: #fff;
 }

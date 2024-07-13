@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         const topRatedMovies = await getTopRatedMovies();
         displayTopRatedMovies(topRatedMovies);
+        displayRecentRelease(topRatedMovies);
     } catch (error) {
         console.error('Error fetching top-rated movies:', error);
     }
@@ -52,12 +53,12 @@ function displayResults(movies) {
             resultDiv.appendChild(img);
         }
 
-        const contentDiv = document.createElement('div');
-        contentDiv.className = 'content-wrapper';
+        // const contentDiv = document.createElement('div');
+        // contentDiv.className = 'content-wrapper';
 
         const name = document.createElement('h4');
         name.textContent = movie.title;
-        contentDiv.appendChild(name);
+        resultDiv.appendChild(name);
         
         const button = document.createElement('button');
         button.textContent = 'Watch Later';
@@ -66,9 +67,9 @@ function displayResults(movies) {
             addToWatchLater(movie);
             saveToWatchLaterJSON(movie);
         });
-        contentDiv.appendChild(button);
+        resultDiv.appendChild(button);
 
-        resultDiv.appendChild(contentDiv);
+        // resultDiv.appendChild(contentDiv);
         resultsDiv.appendChild(resultDiv);
     });
 }
@@ -82,8 +83,7 @@ function displayTopRatedMovies(movies) {
         return;
     }
     
-    // Sort movies by vote_average in descending order
-    movies.sort((a, b) => b.vote_average - a.vote_average);
+    movies.sort((a, b) => b.vote_average- a.vote_average);
     
     // Display up to the top 20 highest-rated movies
     const moviesToDisplay = movies.slice(0, 20);
@@ -107,6 +107,47 @@ function displayTopRatedMovies(movies) {
         const rating = document.createElement('p');
         rating.textContent = `${movie.vote_average.toFixed(1)}`;
         rating.className = 'top-rated-rating';
+        topRatedMovieDiv.appendChild(rating);
+    
+        topRatedMoviesDiv.appendChild(topRatedMovieDiv);
+    });
+}
+
+
+function displayRecentRelease(movies) {
+    const topRatedMoviesDiv = document.querySelector('.recent-display');
+    topRatedMoviesDiv.innerHTML = ''; // Clear any existing content
+    
+    if (movies.length === 0) {
+        topRatedMoviesDiv.innerHTML = '<p>No top-rated movies found.</p>';
+        return;
+    }
+    
+    // Sort decending order
+    movies.sort((a, b) => b.release_date- a.release_date);
+    
+    // Display up to the top 20 highest-rated movies
+    const moviesToDisplay = movies.slice(0, 20);
+    
+    moviesToDisplay.forEach(movie => {
+        const topRatedMovieDiv = document.createElement('div');
+        topRatedMovieDiv.className = 'recent-release-movie';
+    
+        if (movie.poster_path) {
+            const img = document.createElement('img');
+            img.src = movie.poster_path;
+            img.alt = movie.title;
+            topRatedMovieDiv.appendChild(img);
+        }
+    
+        const name = document.createElement('p');
+        name.textContent = movie.title;
+        name.className = 'recent-release-title';
+        topRatedMovieDiv.appendChild(name);
+    
+        const rating = document.createElement('p');
+        rating.textContent = `${movie.vote_average.toFixed(1)}`;
+        rating.className = 'recent-release-rating';
         topRatedMovieDiv.appendChild(rating);
     
         topRatedMoviesDiv.appendChild(topRatedMovieDiv);
