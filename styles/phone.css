@@ -112,9 +112,9 @@ p {
   background-color: #212529;
   border: 0;
   border-top-left-radius: 10px;
-  border-top-right-radius: 0px;
+  /* border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-bottom-right-radius: 0px; */
   padding: 10px;
   font-size: 16px;
   color: #fff;
@@ -270,6 +270,8 @@ footer {
   outline: none;
   background-color: #7b2cbf;
   color: white;
+  padding-left: 6px;
+  padding-right: 6px;
   cursor: pointer;
   border-radius: 5px;
   font-size: 24px;
@@ -331,6 +333,7 @@ footer {
 .top-rated-movie {
   padding: 5px;
   transition: 0.5s;
+  /* animation: moveLeft 5s linear infinite; */
 }
 
 .top-rated-movie img {
@@ -375,11 +378,8 @@ overflow: hidden;    /* Hide the overflow text */
 width: 100px;
 }
 
-.top-rated-rating{
-color: greenyellow;
-font-weight: bolder;
-font-size: small;
-text-align: left;
+.recent-release-rating{
+display: none;
 }
 
 .recent-display {
@@ -393,7 +393,7 @@ display: flex;
 flex-direction: row;
 text-align: center;
 }
-.top-rated-movie {
+.recent-release-movie {
 padding: 5px;
 transition: 0.5s;
 }
@@ -405,7 +405,115 @@ width: 120px;
 transition: opacity 0.5s, border-clor 0.5s;
 }
 
-.top-rated-movie img:hover {
+.recent-release-movie img:hover {
 opacity: 0.5; /* Adjust the opacity level as needed */
 border-color: #fff;
+}
+
+
+/* romance movies */
+
+
+.romance-movies{
+  width: 97%;
+  height: auto;
+  overflow: auto;
+  background-color: #212529;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.romance-movies h4 {
+padding-top: 10px;
+padding-left: 10px;
+padding-bottom: 10px;
+color: #fff;
+}
+
+.romance-title {
+color: #fff;
+font-size: x-small;
+text-align: left;
+text-overflow: ellipsis; /* Show ellipsis when text overflows */
+white-space: nowrap; /* Prevent text from wrapping to a new line */
+overflow: hidden;    /* Hide the overflow text */
+width: 100px;
+}
+
+.romance-rating{
+display: none;
+}
+
+.romance-display {
+width: 97%;
+height: auto;
+overflow: auto;
+background-color: #212529;
+margin: 0 auto;
+border-radius: 10px;
+display: flex;
+flex-direction: row;
+text-align: center;
+}
+.romance-movie {
+padding: 5px;
+transition: 0.5s;
+}
+
+.romance-movie img {
+height: auto;
+border-radius: 5px;
+width: 120px;
+transition: opacity 0.5s, border-clor 0.5s;
+}
+
+.romance-movie img:hover {
+opacity: 0.5; /* Adjust the opacity level as needed */
+border-color: #fff;
+}
+
+
+.genre {
+  width: 97%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  text-align: center;
+  /* flex-direction: row; */
+}
+
+.genre a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 auto;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  background-color: #7b2cbf;
+  transition: 0.5s;
+}
+
+.genre a:hover {
+  background-color: #451C69;
+}
+
+.genre h4{
+  text-align: left;
+  padding-bottom: 10%;
+  color: #fff;
+  padding-left: 4%;
+}
+
+
+@keyframes moveLeft {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
 }

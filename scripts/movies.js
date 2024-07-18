@@ -1,4 +1,4 @@
-import { getMovieTitle, getTopRatedMovies } from './externalServices.mjs';
+import { getMovieTitle, getTopRatedMovies, getTopActionMovies, getTopRomanceMovies } from './externalServices.mjs';
 import { setLocalStorage, getLocalStorage } from './utils.mjs';
 
 document.getElementById('searchMovie').addEventListener('submit', async function(e) {
@@ -16,7 +16,28 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         const topRatedMovies = await getTopRatedMovies();
         displayTopRatedMovies(topRatedMovies);
-        displayRecentRelease(topRatedMovies);
+        // displayRecentRelease(topRatedMovies);
+        loadWatchLaterList(); // Load the watch later list when the page loads
+    } catch (error) {
+        console.error('Error fetching top-rated movies:', error);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const RecentReleaseMovies = await getTopActionMovies();
+        displayRecentRelease(RecentReleaseMovies);
+        loadWatchLaterList(); // Load the watch later list when the page loads
+    } catch (error) {
+        console.error('Error fetching top-rated movies:', error);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const RomanceMovies = await getTopRomanceMovies();
+        displayRomanceMovies(RomanceMovies);
+        loadWatchLaterList(); // Load the watch later list when the page loads
     } catch (error) {
         console.error('Error fetching top-rated movies:', error);
     }
@@ -53,9 +74,6 @@ function displayResults(movies) {
             resultDiv.appendChild(img);
         }
 
-        // const contentDiv = document.createElement('div');
-        // contentDiv.className = 'content-wrapper';
-
         const name = document.createElement('h4');
         name.textContent = movie.title;
         resultDiv.appendChild(name);
@@ -65,11 +83,9 @@ function displayResults(movies) {
         button.className = 'watch-later-button';
         button.addEventListener('click', () => {
             addToWatchLater(movie);
-            saveToWatchLaterJSON(movie);
         });
         resultDiv.appendChild(button);
 
-        // resultDiv.appendChild(contentDiv);
         resultsDiv.appendChild(resultDiv);
     });
 }
@@ -82,8 +98,9 @@ function displayTopRatedMovies(movies) {
         topRatedMoviesDiv.innerHTML = '<p>No top-rated movies found.</p>';
         return;
     }
-    
-    movies.sort((a, b) => b.vote_average- a.vote_average);
+
+    // Sort the movies by vote average in descending order
+    movies.sort((a, b) => b.vote_average - a.vote_average);
     
     // Display up to the top 20 highest-rated movies
     const moviesToDisplay = movies.slice(0, 20);
@@ -113,69 +130,122 @@ function displayTopRatedMovies(movies) {
     });
 }
 
-
 function displayRecentRelease(movies) {
-    const topRatedMoviesDiv = document.querySelector('.recent-display');
-    topRatedMoviesDiv.innerHTML = ''; // Clear any existing content
+    const recentDisplayDiv = document.querySelector('.recent-display');
+    recentDisplayDiv.innerHTML = ''; // Clear any existing content
     
     if (movies.length === 0) {
-        topRatedMoviesDiv.innerHTML = '<p>No top-rated movies found.</p>';
+        recentDisplayDiv.innerHTML = '<p>No recent releases found.</p>';
         return;
     }
     
-    // Sort decending order
-    movies.sort((a, b) => b.release_date- a.release_date);
+
+    const filteredMovie =  movies.sort((a, b) => b.vote_average - a.vote_average);
+
+    // Sort movies by release date in descending order
+    // filteredMovie.sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
     
-    // Display up to the top 20 highest-rated movies
-    const moviesToDisplay = movies.slice(0, 20);
+    // Display up to the top 20 most recent movies
+    const moviesToDisplay = filteredMovie.slice(0, 20);
     
     moviesToDisplay.forEach(movie => {
-        const topRatedMovieDiv = document.createElement('div');
-        topRatedMovieDiv.className = 'recent-release-movie';
+        const recentReleaseMovieDiv = document.createElement('div');
+        recentReleaseMovieDiv.className = 'recent-release-movie';
     
         if (movie.poster_path) {
             const img = document.createElement('img');
             img.src = movie.poster_path;
             img.alt = movie.title;
-            topRatedMovieDiv.appendChild(img);
+            recentReleaseMovieDiv.appendChild(img);
         }
     
         const name = document.createElement('p');
         name.textContent = movie.title;
         name.className = 'recent-release-title';
-        topRatedMovieDiv.appendChild(name);
+        recentReleaseMovieDiv.appendChild(name);
     
         const rating = document.createElement('p');
         rating.textContent = `${movie.vote_average.toFixed(1)}`;
         rating.className = 'recent-release-rating';
-        topRatedMovieDiv.appendChild(rating);
+        recentReleaseMovieDiv.appendChild(rating);
     
-        topRatedMoviesDiv.appendChild(topRatedMovieDiv);
+        recentDisplayDiv.appendChild(recentReleaseMovieDiv);
     });
 }
-function addToWatchLater(movie) {
-    const watchDisplay = document.querySelector('.watch-display');
 
-    const watchItem = document.createElement('div');
-    watchItem.className = 'watch-item';
-
-    if (movie.poster_path) {
-        const img = document.createElement('img');
-        img.src = movie.poster_path;
-        img.alt = movie.title;
-        img.className = "movie-image";
-        watchItem.appendChild(img);
+function displayRomanceMovies(movies) {
+    const recentDisplayDiv = document.querySelector('.romance-display');
+    recentDisplayDiv.innerHTML = ''; // Clear any existing content
+    
+    if (movies.length === 0) {
+        recentDisplayDiv.innerHTML = '<p>No recent releases found.</p>';
+        return;
     }
+    
 
-    const name = document.createElement('p');
-    name.textContent = movie.title;
-    watchItem.appendChild(name);
+    const filteredMovie =  movies.sort((a, b) => b.vote_average - a.vote_average);
 
-    watchDisplay.appendChild(watchItem);
+    // Sort movies by release date in descending order
+    // filteredMovie.sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
+    
+    // Display up to the top 20 most recent movies
+    const moviesToDisplay = filteredMovie.slice(0, 20);
+    
+    moviesToDisplay.forEach(movie => {
+        const recentReleaseMovieDiv = document.createElement('div');
+        recentReleaseMovieDiv.className = 'romance-movie';
+    
+        if (movie.poster_path) {
+            const img = document.createElement('img');
+            img.src = movie.poster_path;
+            img.alt = movie.title;
+            recentReleaseMovieDiv.appendChild(img);
+        }
+    
+        const name = document.createElement('p');
+        name.textContent = movie.title;
+        name.className = 'romance-title';
+        recentReleaseMovieDiv.appendChild(name);
+    
+        const rating = document.createElement('p');
+        rating.textContent = `${movie.vote_average.toFixed(1)}`;
+        rating.className = 'romance-rating';
+        recentReleaseMovieDiv.appendChild(rating);
+    
+        recentDisplayDiv.appendChild(recentReleaseMovieDiv);
+    });
 }
 
-function saveToWatchLaterJSON(movie) {
-    let watchLaterMovies = getLocalStorage('watchLaterMovies') || [];
+function addToWatchLater(movie) {
+    const watchLaterMovies = getLocalStorage('watchLaterMovies') || [];
     watchLaterMovies.push(movie);
     setLocalStorage('watchLaterMovies', watchLaterMovies);
+    loadWatchLaterList(); // Update the display after adding a movie
 }
+
+function loadWatchLaterList() {
+    const watchLaterMovies = getLocalStorage('watchLaterMovies') || [];
+    const watchDisplay = document.querySelector('.watch-display');
+    watchDisplay.innerHTML = ''; // Clear any existing content
+
+    watchLaterMovies.forEach(movie => {
+        const watchItem = document.createElement('div');
+        watchItem.className = 'watch-item';
+
+        if (movie.poster_path) {
+            const img = document.createElement('img');
+            img.src = movie.poster_path;
+            img.alt = movie.title;
+            img.className = "movie-image";
+            watchItem.appendChild(img);
+        }
+
+        const name = document.createElement('p');
+        name.textContent = movie.title;
+        watchItem.appendChild(name);
+
+        watchDisplay.appendChild(watchItem);
+    });
+}
+
+

@@ -18,6 +18,7 @@
         </div>
         <nav>
             <a href="#watch-later"><i class='bx bxs-bookmark'></i></a>
+            <a href="#genres"><i class='bx bxs-carousel'></i></a>
             <a href="#"><i class='bx bxs-user'></i></a>
         </nav>
     </header>
@@ -25,19 +26,33 @@
         <section class="hero-container">
             <img src="./images/hero-image.jpg" alt="hero image" class="hero-image">
         </section>
+
+        <section class="genre" id="genres">
+            <h4>Genres</h4>
+            <a href="#romance-container">Romance</a>
+            <a href="#recent-container">Action</a>
+        </section>
+
         <div class="search-container">
             <form id="searchMovie">
                 <input type="text" id="title" name="title" placeholder="Search..."required>
                 <button type="submit" class="transparent-button"><i class='bx bx-search-alt'></i></button>
             </form>
         </div>
+
         <div class="dashboard">
             <div id="results">
             </div>
         </div>
         <section class="recent-releases" id="recent-container">
-            <h4>Recent Releases</h4>
+            <h4>Action Movies</h4>
             <div class="recent-display"></div>
+
+        </section>
+
+        <section class="romance-movies" id="romance-container">
+            <h4>Romance Movies</h4>
+            <div class="romance-display"></div>
 
         </section>
         <section class="top-rated-movies" id="movie-container">
