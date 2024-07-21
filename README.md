@@ -4,7 +4,7 @@ This website is called Movie Scout, the purpose of the website is to provide use
 
 Below is a Video demonstration of the website demo:
 
-[Movie Scout Demo](http://youtube.link.goes.here)
+[Movie Scout Demo](https://youtu.be/dtKw-8R2yQE)
 
 # Web Pages
 
