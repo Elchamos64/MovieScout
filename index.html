@@ -6,6 +6,7 @@
     <title>Movie Scout</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="./styles/phone.css" rel="stylesheet">
+    <link href="./styles/web.css" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" href="./favicon_io/android-chrome-512x512.png">
@@ -19,7 +20,7 @@
         <nav>
             <a href="#watch-later"><i class='bx bxs-bookmark'></i></a>
             <a href="#genres"><i class='bx bxs-carousel'></i></a>
-            <a href="#"><i class='bx bxs-user'></i></a>
+            <a href="#search"><i class='bx bx-search-alt'></i></a>
         </nav>
     </header>
     <main>
@@ -33,7 +34,7 @@
             <a href="#recent-container">Action</a>
         </section>
 
-        <div class="search-container">
+        <div class="search-container" id="search">
             <form id="searchMovie">
                 <input type="text" id="title" name="title" placeholder="Search..."required>
                 <button type="submit" class="transparent-button"><i class='bx bx-search-alt'></i></button>

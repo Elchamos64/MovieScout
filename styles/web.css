@@ -1,0 +1,100 @@
+@media only screen and (min-width: 450px) {
+  nav a {
+    margin-right: 40px;
+    padding-right: 20px;
+    transition: 1s;
+  }
+
+  nav a:hover {
+    color: aqua;
+  }
+
+  .genre {
+    height: auto;
+    margin: 0 auto;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    text-align: center;
+    /* flex-direction: row; */
+  }
+
+  .genre a {
+    text-decoration: none;
+    color: #fff;
+    margin-top: 0;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    background-color: #7b2cbf;
+    transition: 0.5s;
+  }
+
+  .genre h4 {
+    text-align: left;
+    padding-bottom: 2%;
+    color: #fff;
+    padding-left: 4%;
+  }
+
+  /* images */
+  .watch-item img {
+    width: 220px;
+  }
+
+  .romance-movie img {
+    width: 220px;
+  }
+
+  .recent-release-movie img {
+    width: 220px;
+  }
+
+  .top-rated-movie img {
+    width: 220px;
+  }
+  .movie-image {
+    width: 220px;
+  }
+
+  .recent-release-title,
+  .romance-title,
+  .top-rated-title {
+    font-size: medium;
+    width: 200px;
+  }
+
+  .watch-item p {
+    font-size: medium;
+  }
+
+  .recent-releases h4 {
+    padding-left: 2%;
+  }
+
+  .romance-movies h4 {
+    padding-left: 2%;
+  }
+
+  .top-rated-movies h4 {
+    padding-left: 2%;
+  }
+
+  .watch-later h4 {
+    padding-left: 2%;
+  }
+
+  .hero-container{
+    width: 100%;
+    height: 50%;
+  }
+
+  .hero-image{
+    width: 100%;
+  }
+
+  #backToTopBtn {
+    font-size: 40px;
+  }
+}

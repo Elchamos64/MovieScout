@@ -82,6 +82,7 @@ body {
   display: block;
 }
 
+
 .result h4 {
  display: none;
 }
@@ -112,9 +113,9 @@ p {
   background-color: #212529;
   border: 0;
   border-top-left-radius: 10px;
-  /* border-top-right-radius: 0px;
+  border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px; */
+  border-bottom-right-radius: 0px;
   padding: 10px;
   font-size: 16px;
   color: #fff;
